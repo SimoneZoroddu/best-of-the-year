@@ -1,5 +1,7 @@
 package org.lessons.thymeleaf.best_of_the_year.controller;
 
+import org.lessons.thymeleaf.best_of_the_year.classes.Movie;
+import org.lessons.thymeleaf.best_of_the_year.classes.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +19,26 @@ public class HomeController {
         return "home";
     }
 
-    /* 
-    private Movie  getBestMovies(){
-        return 
+    @GetMapping("/movies")
+    public String movies(Model model) {
+        model.addAttribute(getBestMovies());
+        return "movies";
     }
 
-    private Song  getBestSongs(){
-        return 
-    } 
-    */
+    @GetMapping("/songs")
+    public String songs(Model model) {
+        model.addAttribute(getBestSongs());
+        return "songs";
+    }
+
+    private Movie getBestMovies() {
+        Movie bestMovies = new Movie("best movie title");
+        return bestMovies;
+    }
+
+    private Song getBestSongs() {
+        Song bestSongs = new Song("best song title");
+        return bestSongs;
+    }
+
 }

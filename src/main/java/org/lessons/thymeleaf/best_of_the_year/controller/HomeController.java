@@ -16,4 +16,14 @@ public class HomeController {
         model.addAttribute("name", name);
         return "home";
     }
+
+    /* 
+    private Movie  getBestMovies(){
+        return 
+    }
+
+    private Song  getBestSongs(){
+        return 
+    } 
+    */
 }

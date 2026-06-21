@@ -27,10 +27,12 @@ public class HomeController {
         model.addAttribute("bestMovies", getBestMovies());
         return "movies";
     }
+
     @GetMapping("/movies/{id}")
-    public String moviesId(@PathVariable("id") String id ,Model model) {
+    public String moviesId(@PathVariable("id") Long id, Model model) {
         model.addAttribute("bestMovies", getBestMovies());
-        return "movies";
+        model.addAttribute("id", id);
+        return "movie";
     }
 
     @GetMapping("/songs")
@@ -38,10 +40,12 @@ public class HomeController {
         model.addAttribute("bestSongs", getBestSongs());
         return "songs";
     }
+
     @GetMapping("/songs/{id}")
-    public String songsId(Model model) {
+    public String songsId(@PathVariable("id") Long id, Model model) {
         model.addAttribute("bestSongs", getBestSongs());
-        return "songs";
+        model.addAttribute("id", id);
+        return "song";
     }
 
     private ArrayList<Movie> getBestMovies() {

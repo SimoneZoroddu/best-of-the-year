@@ -14,6 +14,7 @@
     <div th:each="movie : ${bestMovies}">
         <div th:object="${movie}">
             <h1 th:text="*{title}"></h1>
+            <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="|Movie numero ${movie.id} |"></a>
         </div>
     </div>
     <th:block th:replace="~{fragments :: footer}"></th:block>

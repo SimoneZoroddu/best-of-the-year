@@ -1,14 +1,12 @@
 package org.lessons.thymeleaf.best_of_the_year.classes;
 
-
 public class Movie {
 
     private int id = 0;
     private String title;
-    private static int counterId = 0;
 
-    public Movie(String title) {
-        this.id = ++counterId;
+    public Movie(int id, String title) {
+        this.id = id;
         this.title = title;
     }
 

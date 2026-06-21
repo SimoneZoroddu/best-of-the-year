@@ -19,6 +19,8 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("bestMovies", getBestMovies());
+        model.addAttribute("bestSongs", getBestSongs());
         return "home";
     }
 
@@ -50,15 +52,15 @@ public class HomeController {
 
     private ArrayList<Movie> getBestMovies() {
         ArrayList<Movie> movies = new ArrayList<>();
-        movies.add(new Movie("best movie title"));
-        movies.add(new Movie("best second movie title"));
+        movies.add(new Movie(1, "best movie title"));
+        movies.add(new Movie(2, "best second movie title"));
         return movies;
     }
 
     private ArrayList<Song> getBestSongs() {
         ArrayList<Song> songs = new ArrayList<>();
-        songs.add(new Song("best song title"));
-        songs.add(new Song("best second song title"));
+        songs.add(new Song(1, "best song title"));
+        songs.add(new Song(2, "best second song title"));
         return songs;
     }
 

@@ -12,6 +12,12 @@
     <th:block th:replace="~{fragments :: header}"></th:block>
     <h1>Best of the Year [[${name}]] </h1>
     <h1 th:text="|Best of the Year ${name}|" />
+    <th:block th:each="movie : ${bestMovies}">
+        <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="|Movie numero ${movie.id} |"></a>
+    </th:block>
+    <th:block th:each="song : ${bestSongs}">
+        <a th:href="@{/songs/{id}(id=${song.id})}" th:text="|Song numero ${song.id} |"></a>
+    </th:block>
     <th:block th:replace="~{fragments :: footer}"></th:block>
 </body>
 

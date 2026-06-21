@@ -1,0 +1,22 @@
+ body {
+     background-color: black !important;
+     color: white !important;
+ }
+
+ .footer-link {
+     transition: 0.2s;
+ }
+
+ .footer-link:hover {
+     color: #1db954 !important;
+     transform: translateX(3px);
+ }
+
+ .social-icon {
+     transition: 0.2s;
+ }
+
+ .social-icon:hover {
+     color: #1db954 !important;
+     transform: scale(1.2);
+ }

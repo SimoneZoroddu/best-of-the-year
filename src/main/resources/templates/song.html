@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song</title>
+    <th:block th:replace="~{fragments :: linkStyles}"></th:block>
 </head>
 
 <body>
+    <th:block th:replace="~{fragments :: header}"></th:block>
     <h1 th:text="|Song ${id}|"></h1>
     <div th:object="${bestSongs[id - 1]}">
         <h1 th:text="*{title}"></h1>
     </div>
+    <th:block th:replace="~{fragments :: footer}"></th:block>
 </body>
 
 </html>
